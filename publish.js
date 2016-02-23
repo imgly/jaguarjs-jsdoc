@@ -186,6 +186,14 @@ function attachModuleSymbols(doclets, modules) {
     });
 }
 
+function prepareLongname (longname) {
+  var split = longname.split('.')
+  if (split.length > 1) {
+    return split.slice(1).join('.')
+  }
+  return longname
+}
+
 /**
  * Create the navigation sidebar.
  * @param {object} members The members that will be used to create the sidebar.
@@ -207,6 +215,7 @@ function buildNav(members) {
             nav.push({
                 type: 'namespace',
                 longname: v.longname,
+                displayName: prepareLongname(v.longname),
                 name: v.name,
                 members: find({
                     kind: 'member',
@@ -235,6 +244,7 @@ function buildNav(members) {
             nav.push({
                 type: 'class',
                 longname: v.longname,
+                displayName: prepareLongname(v.longname),
                 name: v.name,
                 members: find({
                     kind: 'member',
