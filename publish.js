@@ -211,12 +211,12 @@ function buildNav(members) {
                 members: find({
                     kind: 'member',
                     memberof: v.longname,
-                    inherited: false
+                    inherited: { '!is': true }
                 }),
                 methods: find({
                     kind: 'function',
                     memberof: v.longname,
-                    inherited: false
+                    inherited: { '!is': true }
                 }),
                 typedefs: find({
                     kind: 'typedef',
