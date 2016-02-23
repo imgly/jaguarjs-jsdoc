@@ -208,10 +208,6 @@ function buildNav(members) {
                 type: 'namespace',
                 longname: v.longname,
                 name: v.name,
-                classes: find({
-                    kind: 'class',
-                    memberof: v.longname
-                }),
                 members: find({
                     kind: 'member',
                     memberof: v.longname,
