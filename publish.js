@@ -234,9 +234,8 @@ function buildNav(members) {
         });
     }
 
-    var classes = find({ kind: 'class', memberof: { isUndefined: true }})
-    if (classes) {
-        _.each(classes, function (v) {
+    if (members.classes.length) {
+        _.each(members.classes, function (v) {
             nav.push({
                 type: 'class',
                 longname: v.longname,
