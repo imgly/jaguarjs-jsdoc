@@ -18,6 +18,20 @@ var self = this;
                 <span class="static">static</span>
                 <?js } ?>
             </span>
+            <ul class="classes itemMembers">
+            <?js
+            if (item.classes && item.classes.length) {
+            ?>
+            <span class="subtitle">Classes</span>
+            <?js
+                item.classes.forEach(function (v) {
+            ?>
+                <li data-name="<?js= v.longname ?>"><?js= self.linkto(v.longname, v.name) ?></li>
+            <?js
+                });
+            }
+            ?>
+            </ul>
             <ul class="members itemMembers">
             <?js
             if (item.members.length) {
